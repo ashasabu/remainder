@@ -1,0 +1,31 @@
+
+<nav class="navbar navbar-light bg-dark " >
+    <span class="quote text-light">WELCOME...</span>
+
+  </nav>
+  
+  <div class="container w-25"> 
+      
+    <div class="card" style="width: 25rem;">
+        <div class="card-body"style="width: 25rem;">
+       <form action="" [formGroup]="loginForm">
+          <label  style="color:white">UserId : </label>   
+          <input type="text" class="w-100" formControlName="userId" placeholder="Enter Username" name="userId" required> 
+          <div *ngIf="this.loginForm.get('userId')?.touched&&this.loginForm.get('userId')?.errors" style="color: red;">
+						Invalid Account No
+					</div> <br>
+        <br>  <label  style="color:white">Password : </label>   
+          <input type="password"  class="w-100" formControlName="pswd" placeholder="Enter Password" name="password" required>  <br>
+          <div *ngIf="this.loginForm.get('pswd')?.touched&&this.loginForm.get('pswd')?.errors" style="color: red;">
+						Invalid password
+					</div>
+        <br>  <button class="btn btn-primary" type="submit" (click)="login()">Login</button>   <br><br>
+          <p style="color:white;align-items:baseline;">Not a user? <a href="./register.html" routerLink="register">Register</a></p>
+        </form>
+      </div>   
+       
+       
+       
+        </div>
+      </div>
+   

@@ -1,0 +1,33 @@
+<div class="container w-25"> 
+      
+    <div class="card" style="width: 25rem;">
+        <div class="card-body"style="width: 25rem;">
+       <form action="" [formGroup]="registerForm">
+
+        <label  style="color:white">Username : </label>   
+        <input type="text" class="w-100" formControlName="username" placeholder="Enter name" name="username" required> 
+        <div *ngIf="this.registerForm.get('username')?.touched&&this.registerForm.get('username')?.errors" style="color: red;">
+                      Invalid Username
+                  </div> <br>
+
+          <label  style="color:white">UserId : </label>   
+          <input type="text" class="w-100" formControlName="userId" placeholder="Enter UserId" name="userId" required> 
+          <div *ngIf="this.registerForm.get('userId')?.touched&&this.registerForm.get('userId')?.errors" style="color: red;">
+						Invalid UserId
+					</div> <br>
+        <br>  <label  style="color:white">Password : </label>   
+          <input type="password"  class="w-100" formControlName="pswd" placeholder="Enter Password" name="password" required>  <br>
+          <div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors" style="color: red;">
+						Invalid password
+					</div>
+        <br>  <button class="btn btn-primary" type="submit" (click)="register()">Register</button>   <br><br>
+        <p style="color:white;align-items:baseline;">Existing User? <a href="" routerLink="">Log In</a></p>
+
+        </form>
+      </div>   
+       
+       
+       
+        </div>
+      </div>
+   
