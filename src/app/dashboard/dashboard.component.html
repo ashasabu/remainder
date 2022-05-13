@@ -7,14 +7,17 @@
 <div class="container w-25">
 <div class="card" style="width: 25rem;">
     <div class="card-body"style="width: 25rem;">
-<form >
+<form [formGroup]="dateForm" (ngSubmit)="submit()">
     <label for="event" style="color: white"  >Event:</label>
-    <input type="date" class="w-100" id="event" formControlName="date" name="event" ><br><br>
-    <label for="" style="color: white">Text:</label>
+    <!-- <input type="date" class="w-100"   id="event" formControlName="date"  [(ngModel)]="dateselected"  name="event" ><br><br> -->
+    <input type="date" class="w-100"   id="event" formControlName="date"  name="event" ><br><br>
 
-    <input type="text" class="w-100">
-  <button class="btn btn-primary">submit</button><br><br>
- 
+    
+    <label for="" style="color: white" >Text:</label>
+    <input type="text" class="w-100"formControlName="text">
+  <!-- <button class="btn btn-primary" type="submit"  value="date" >submit</button><br><br> -->
+  <input type="submit"  value="submit" class="btn float-right login_btn " style="width:50%" >
+
 </form>
 </div>
 </div>
