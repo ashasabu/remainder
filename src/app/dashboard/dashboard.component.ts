@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+loginDate:any
+date:any
 
-  constructor() { }
+  constructor() { 
+    this.loginDate=new Date()
+// console.log(this.loginDate);
+
+  }
 
   ngOnInit(): void {
   }
+event(){
 
+  
+
+
+}
 }
