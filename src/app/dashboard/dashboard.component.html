@@ -7,16 +7,27 @@
 <div class="container w-25">
 <div class="card" style="width: 25rem;">
     <div class="card-body"style="width: 25rem;">
-<form [formGroup]="dateForm" (ngSubmit)="submit()">
-    <label for="event" style="color: white"  >Event:</label>
-    <!-- <input type="date" class="w-100"   id="event" formControlName="date"  [(ngModel)]="dateselected"  name="event" ><br><br> -->
-    <input type="date" class="w-100"   id="event" formControlName="date"  name="event" ><br><br>
+<form [formGroup]="dateForm">
+  <!-- <input type="text" name="userId" formControlName="userId" class="form-control"  placeholder="userId" id="login_accno" required> -->
 
-    
-    <label for="" style="color: white" >Text:</label>
-    <input type="text" class="w-100"formControlName="text">
+    <h5 for="" style="color: white"  >Event:</h5>
+    <!-- <input type="date" class="w-100"   id="event" formControlName="date"  [(ngModel)]="dateselected"  name="event" ><br><br> -->
+    <input type="date" class="w-100"   id="event" formControlName="date"  name="date" ><br><br>
+
+    <div class="text-center" *ngIf="(this.dateForm.get('date')?.touched) && this.dateForm.get('date')?.errors"
+    style="color: red;">please Enter date</div>
+
+    <textarea class="form-control text-center" formControlName="text" placeholder="Add Event Discription" id="floatingTextarea"></textarea>
+
+
+    <div *ngIf="this.dateForm.get('text')?.touched&&this.dateForm.get('text')?.errors" style="color: red;">
+      Invalid password
+    </div>
   <!-- <button class="btn btn-primary" type="submit"  value="date" >submit</button><br><br> -->
-  <input type="submit"  value="submit" class="btn float-right login_btn " style="width:50%" >
+  <button type="button" (click)="addEvent()" style="border: 1px solid cadetblue;" class="btn ">Add Event</button>
+ <br>
+  <!-- <button type="button" routerLink="/viewEvent"  style="border: 1px solid cadetblue;" class="btn ">View Event</button> -->
+
 
 </form>
 </div>

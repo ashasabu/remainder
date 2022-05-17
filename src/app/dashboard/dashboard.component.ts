@@ -14,8 +14,10 @@ date:any
 textselected:any
 
 dateForm=this.fb.group({
-  date:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]],
-  text:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
+ 
+
+  date:['',[Validators.required,Validators.pattern('')]],
+  text:['',[Validators.required,Validators.pattern('')]]
 })
   constructor(private fb:FormBuilder,private ds:DataService,private router:Router) { 
     this.loginDate=new Date()
@@ -56,27 +58,46 @@ dateForm=this.fb.group({
 //   }
 
 // }
-
-submit(){
+addEvent(){
   
   var date=this.dateForm.value.date
   // console.log(event);
 
   var text=this.dateForm.value.text
-  console.log(date);  
-  console.log(text);
+ var userId=JSON.parse(localStorage.getItem('currentId')|| '')
+ var token=JSON.parse(localStorage.getItem('token')||'')
+ 
+  if(this.dateForm.valid){
+    console.log(date);  
+    
+  this.ds.addEvent(userId,token,date,text)
+ 
+  .subscribe((result:any)=>{
+     
+
+    if(result){
+      localStorage.setItem('currentDate', JSON.stringify(result.currentDate))
+      console.log(text);
+      alert(result.message)
+     
+    }
+       
   
+      
+    },
+    (result: any) => {
+      alert(result.error.message)
+      // this.router.navigateByUrl('viewEvent')
+
+    }
+  )
+}
+else {
+  alert("invalid form")
+}
 }
 
+
+
+
 }
-
-// start(){
-// console.log(this.start);
-
-// }
-
-///
-
-
-
-

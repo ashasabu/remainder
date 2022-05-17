@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// const options={
-//   headers:new HttpHeaders()
-// }
+const options={
+  headers:new HttpHeaders()
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -10,9 +10,9 @@ export class DataService {
   currentId:any
   currentUser:any
   database:any ={
-    1000:{userId:1000,username:"meena",pswd:1000,event:[]},
-    1001:{userId:1001,username:"neena",pswd:1001,event:[]},
-    1002:{userId:1002,username:"aneena",pswd:1002,event:[]}
+    1:{userId:1,username:"meena",pswd:1,event:[]},
+    2:{userId:2,username:"neena",pswd:2,event:[]},
+    3:{userId:3,username:"aneena",pswd:3,event:[]}
   }
   constructor(private http:HttpClient) {
    // this.getDetails()
@@ -62,4 +62,29 @@ export class DataService {
     return this.http.post('http://localhost:3000/login',data)
    
      }
+
+     addEvent(userId:any,token:any,date:any,text:any){
+   
+      const data={
+        userId,
+        token,
+        date,
+        text
+      
+      }
+      return this.http.post('http://localhost:3000/addEvent',data)
+  
+    }
+
+    // getOptions(){
+    //   const token=JSON.parse(localStorage.getItem("token")||'')
+    //   //create http header
+    //   let headers=new HttpHeaders()
+    //   //add token to req header
+    //   if(token){
+    //     headers=headers.append('x-access-token',token)
+    //     options.headers=headers
+    //   }
+    //   return options
+    //     }
 }
