@@ -1,0 +1,25 @@
+<!-- <p>viewdetails works!</p> -->
+
+<h1 style="text-align: center;">VIEW EVENTS</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+            <th>Date</th>
+            <th>Events</th>
+        </tr>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let v of events">
+                <th>{{v.date}}</th>
+                <th>{{v.text}}</th>
+
+            </tr>
+        </tbody>
+    </table>
+    <a routerLink="/dashboard">Home</a>
+
+</div>
+
+

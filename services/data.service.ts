@@ -87,4 +87,12 @@ export class DataService {
     //   }
     //   return options
     //     }
-}
+
+    viewdetails(userId:any){
+      const data={
+        userId
+      }
+      return this.http.post('http://localhost:3000/viewdetails',data)
+    }
+
+  }

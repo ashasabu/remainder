@@ -9,15 +9,15 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { ViewDetailsComponent } from './view-details/view-details.component';
+import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
-    // ViewDetailsComponent
+    DashboardComponent,
+    ViewdetailsComponent
   ],
   imports: [
     BrowserModule,

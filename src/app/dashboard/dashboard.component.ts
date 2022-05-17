@@ -87,7 +87,7 @@ addEvent(){
     },
     (result: any) => {
       alert(result.error.message)
-      // this.router.navigateByUrl('viewEvent')
+    this.router.navigateByUrl('viewdetails')
 
     }
   )
