@@ -97,6 +97,13 @@ else {
 }
 }
 
+//logout
+
+  logout(){
+    localStorage.removeItem("currentUser")
+    localStorage.removeItem("currentId")
+    this.router.navigateByUrl("")
+  }
 
 
 
