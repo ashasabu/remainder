@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-const options={
-  headers:new HttpHeaders()
-}
+// const options={
+//   headers:new HttpHeaders()
+// }
 @Injectable({
   providedIn: 'root'
 })
@@ -94,5 +94,8 @@ export class DataService {
       }
       return this.http.post('http://localhost:3000/viewdetails',data)
     }
-
+    deleteAcc(userId:any){
+      return this.http.delete('http://localhost:3000/deleteAcc/'+userId)
+    
+    }
   }

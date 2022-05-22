@@ -32,7 +32,21 @@ export class ViewdetailsComponent implements OnInit {
 
     ngOnInit(): void {
     }
-  
+  deleteAcc(){
+
+var userId = JSON.parse(localStorage.getItem('currentId') || '')
+this.ds.deleteAcc(userId)
+  .subscribe((result:any)=>{
+    if(result){
+      alert(result.message)
+      this.router.navigateByUrl("")
+    }
+  },
+  (result:any)=>{
+    alert(result.error.message)
+  })
+ }
+
    
   }
 

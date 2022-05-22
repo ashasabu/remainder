@@ -4,15 +4,17 @@
 
   </nav>
   
-  <div class="container w-25"> 
-      
-    <div class="card" style="width: 25rem;">
+  <div class="container w-25  col-md-12 mt-0 col-sm-12 col-xs-12"> 
+    <div class="d-flex justify-content-center h-100">
+
+    <div class="card" >
+   
         <div class="card-body"style="width: 25rem;">
        <form action="" [formGroup]="loginForm">
           <label  style="color:white">UserId : </label>   
           <input type="text" class="w-100" formControlName="userId" placeholder="Enter Username" name="userId" required> 
           <div *ngIf="this.loginForm.get('userId')?.touched&&this.loginForm.get('userId')?.errors" style="color: red;">
-						Invalid Account No
+						Invalid UserId
 					</div> <br>
         <br>  <label  style="color:white">Password : </label>   
           <input type="password"  class="w-100" formControlName="pswd" placeholder="Enter Password" name="password" required>  <br>
@@ -25,7 +27,7 @@
       </div>   
        
        
-       
+     </div>
         </div>
       </div>
    

@@ -17,7 +17,7 @@ import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    ViewdetailsComponent
+    ViewdetailsComponent,
   ],
   imports: [
     BrowserModule,

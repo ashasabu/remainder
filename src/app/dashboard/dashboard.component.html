@@ -26,10 +26,10 @@
 
     <div *ngIf="this.dateForm.get('text')?.touched&&this.dateForm.get('text')?.errors" style="color: red;">
       Invalid password
-    </div>
+    </div><br>
   <!-- <button class="btn btn-primary" type="submit"  value="date" >submit</button><br><br> -->
   <button type="button" (click)="addEvent()" style="border: 1px solid cadetblue;" class="btn ">Add Event</button>
- <br>
+ <br><br>
   <button type="button" routerLink="/viewdetails"  style="border: 1px solid cadetblue;" class="btn ">View Event</button>
 
 
